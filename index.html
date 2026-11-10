@@ -1,780 +1,570 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rajan & Shailja's Wedding Invitation</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <title>Rajan & Shailja — Wedding Invitation</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cream: {
+                            50: '#FFFDF9',
+                            100: '#FAF7F2',
+                            200: '#F5EFE6',
+                            300: '#EADBC8',
+                        },
+                        gold: {
+                            400: '#E5C158',
+                            500: '#D4AF37',
+                            600: '#B58E26',
+                            700: '#8C6B16',
+                        },
+                        marigold: '#F48220',
+                        royalMaroon: '#7A1C1C',
+                        emeraldCustom: '#00875A',
+                        indigoCustom: '#2E3192',
+                        magentaCustom: '#C2185B',
+                    },
+                    fontFamily: {
+                        cinzel: ['Cinzel', 'serif'],
+                        cormorant: ['Cormorant Garamond', 'serif'],
+                        cursive: ['Great Vibes', 'cursive'],
+                        playfair: ['Playfair Display', 'serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
     <style>
-        :root {
-            --bg-cream: #FAF7F2;
-            --bg-card: #FFFFFF;
-            --gold-primary: #D4AF37;
-            --gold-dark: #AA7C11;
-            --maroon-accent: #800020;
-            --vermilion: #E34A26;
-            --royal-purple: #4A154B;
-            --emerald-green: #0D5C3A;
-            --text-dark: #2C2C2C;
-            --text-muted: #666666;
-            --border-gold: #E8D8B0;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
         body {
-            background-color: var(--bg-cream);
-            color: var(--text-dark);
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            overflow-x: hidden;
-            line-height: 1.6;
-        }
-
-        /* Ambient Audio Control */
-        .audio-control {
-            position: fixed;
-            bottom: 25px;
-            right: 25px;
-            z-index: 1000;
-            background: rgba(255, 255, 255, 0.9);
-            border: 2px solid var(--gold-primary);
-            border-radius: 50px;
-            padding: 10px 20px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-            backdrop-filter: blur(5px);
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .audio-control:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 35px rgba(212, 175, 55, 0.3);
-        }
-
-        .audio-control i {
-            color: var(--maroon-accent);
-            font-size: 1.2rem;
-        }
-
-        /* Hero Section */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 40px 20px;
-            background: radial-gradient(circle at center, #FFFFFF 0%, #FAF7F2 100%);
-            position: relative;
-            border-bottom: 3px double var(--gold-primary);
-        }
-
-        .mandala-bg {
-            position: absolute;
-            width: 500px;
-            height: 500px;
-            opacity: 0.04;
-            background-image: radial-gradient(var(--gold-dark) 2px, transparent 2px);
+            background-color: #FAF7F2;
+            color: #2D2727;
+            background-image: radial-gradient(#D4AF37 0.75px, transparent 0.75px), radial-gradient(#D4AF37 0.75px, #FAF7F2 0.75px);
             background-size: 30px 30px;
-            pointer-events: none;
-            animation: rotate 120s linear infinite;
+            background-position: 0 0, 15px 15px;
         }
 
-        @keyframes rotate {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #B58E26 0%, #D4AF37 50%, #8C6B16 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
-        .auspicious-symbol {
-            color: var(--vermilion);
-            font-size: 2.5rem;
-            margin-bottom: 15px;
-            filter: drop-shadow(0 2px 4px rgba(227, 74, 38, 0.2));
+        .royal-card {
+            background: rgba(255, 253, 249, 0.94);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 30px -5px rgba(212, 175, 55, 0.12), 0 4px 6px -2px rgba(0, 0, 0, 0.03);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        .blessing-header {
-            font-family: 'Cinzel', serif;
-            font-size: 1.1rem;
-            color: var(--gold-dark);
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            margin-bottom: 25px;
+        .royal-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 18px 35px -5px rgba(212, 175, 55, 0.22);
         }
 
-        .couple-names {
-            font-family: 'Great Vibes', cursive;
-            font-size: clamp(3.2rem, 8vw, 6rem);
-            color: var(--maroon-accent);
-            line-height: 1.2;
-            margin: 10px 0;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
+        .couple-names-single-line {
             white-space: nowrap;
+            font-size: clamp(2.2rem, 5.5vw, 4.8rem);
         }
 
-        .family-line {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.15rem;
-            color: var(--text-dark);
-            max-width: 700px;
-            margin: 20px auto;
-            font-style: italic;
-        }
-
-        .poetic-intro {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.25rem;
-            color: var(--royal-purple);
-            max-width: 650px;
-            margin: 25px auto 40px;
-            line-height: 1.8;
-        }
-
-        /* Countdown Timer */
-        .timer-container {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            margin-top: 30px;
-        }
-
-        .timer-box {
-            background: var(--bg-card);
-            border: 1px solid var(--border-gold);
-            padding: 15px 20px;
-            border-radius: 12px;
-            min-width: 80px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
-        }
-
-        .timer-num {
-            font-family: 'Cinzel', serif;
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--gold-dark);
-        }
-
-        .timer-label {
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            color: var(--text-muted);
-        }
-
-        /* Section Styling */
-        .section-title {
-            text-align: center;
-            padding: 60px 20px 20px;
-        }
-
-        .section-title h2 {
-            font-family: 'Cinzel', serif;
-            font-size: 2.2rem;
-            color: var(--maroon-accent);
-            letter-spacing: 2px;
-        }
-
-        .section-title p {
-            font-family: 'Great Vibes', cursive;
-            font-size: 2rem;
-            color: var(--gold-dark);
-        }
-
-        /* Events Timeline Grid */
-        .events-container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 20px 20px 80px;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-        }
-
-        .event-card {
-            background: var(--bg-card);
-            border-radius: 16px;
-            padding: 35px 25px;
-            border: 1px solid var(--border-gold);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.04);
-            position: relative;
-            overflow: hidden;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .event-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.15);
-        }
-
-        .event-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 5px;
-        }
-
-        .card-mehndi::before { background: var(--emerald-green); }
-        .card-ganesh::before { background: #E6A100; }
-        .card-mandap::before { background: var(--gold-primary); }
-        .card-pithi::before { background: #E6A100; }
-        .card-jaan::before { background: var(--royal-purple); }
-        .card-grah::before { background: var(--maroon-accent); }
-        .card-reception::before { background: linear-gradient(90deg, var(--gold-primary), var(--maroon-accent)); }
-
-        .event-header {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .event-icon {
-            font-size: 2rem;
-            margin-bottom: 10px;
-            color: var(--gold-dark);
-        }
-
-        .event-name {
-            font-family: 'Cinzel', serif;
-            font-size: 1.5rem;
-            color: var(--maroon-accent);
-            margin-bottom: 5px;
-        }
-
-        .event-subtitle {
-            font-family: 'Great Vibes', cursive;
-            font-size: 1.5rem;
-            color: var(--gold-dark);
-        }
-
-        .event-details {
-            margin: 20px 0;
-            font-size: 0.95rem;
-        }
-
-        .detail-row {
-            display: flex;
-            align-items: flex-start;
-            gap: 12px;
-            margin-bottom: 12px;
-            color: var(--text-dark);
-        }
-
-        .detail-row i {
-            color: var(--gold-dark);
-            margin-top: 4px;
-            width: 18px;
-        }
-
-        .theme-badge {
-            display: inline-block;
-            background: #FFF8E7;
-            border: 1px solid #FFE099;
-            color: #B87300;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 500;
-            margin-top: 10px;
-        }
-
-        /* Poetic Venue Link & QR Code Box */
-        .poetic-venue-box {
-            margin-top: 20px;
-            padding-top: 18px;
-            border-top: 1px dashed var(--border-gold);
-            text-align: center;
-        }
-
-        .poetic-quote {
-            font-family: 'Playfair Display', serif;
-            font-style: italic;
-            font-size: 0.95rem;
-            color: var(--royal-purple);
-            margin-bottom: 15px;
-            line-height: 1.5;
-        }
-
-        .qr-wrapper {
-            display: inline-block;
-            padding: 8px;
-            background: #FFFFFF;
-            border: 1px solid var(--border-gold);
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-            margin-bottom: 12px;
-        }
-
-        .qr-wrapper img {
-            width: 110px;
-            height: 110px;
-            display: block;
-        }
-
-        .map-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: linear-gradient(135deg, var(--gold-primary), var(--gold-dark));
-            color: #FFFFFF;
-            text-decoration: none;
-            padding: 10px 20px;
-            border-radius: 25px;
-            font-size: 0.88rem;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
-        }
-
-        .map-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 18px rgba(212, 175, 55, 0.45);
-        }
-
-        /* Family Blessing Section */
-        .family-blessings {
-            background: #FFFFFF;
-            max-width: 900px;
-            margin: 40px auto 80px;
-            padding: 50px 30px;
-            border-radius: 20px;
-            border: 1px solid var(--border-gold);
-            text-align: center;
-            box-shadow: 0 10px 35px rgba(0,0,0,0.03);
-        }
-
-        .blessing-title {
-            font-family: 'Cinzel', serif;
-            font-size: 1.6rem;
-            color: var(--maroon-accent);
-            margin-bottom: 25px;
-        }
-
-        .family-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 25px;
-            margin-top: 30px;
-        }
-
-        .family-card h4 {
-            font-family: 'Cinzel', serif;
-            color: var(--gold-dark);
-            margin-bottom: 8px;
-            font-size: 1.05rem;
-        }
-
-        .family-card p {
-            font-size: 0.95rem;
-            color: var(--text-dark);
-            line-height: 1.6;
-        }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 40px 20px;
-            background: var(--bg-cream);
-            border-top: 1px solid var(--border-gold);
-            font-family: 'Playfair Display', serif;
-            color: var(--text-muted);
-        }
-
-        footer p {
-            margin-bottom: 10px;
-        }
-
-        @media (max-width: 600px) {
-            .couple-names {
-                font-size: 2.8rem;
-            }
-            .timer-container {
-                gap: 10px;
-            }
-            .timer-box {
-                padding: 10px 12px;
-                min-width: 65px;
-            }
-            .timer-num {
-                font-size: 1.4rem;
-            }
-        }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #FAF7F2; }
+        ::-webkit-scrollbar-thumb { background: #D4AF37; border-radius: 4px; }
     </style>
 </head>
-<body>
+<body class="font-sans antialiased text-gray-800 selection:bg-gold-500 selection:text-white pb-20">
 
-    <!-- Background Shehnai Music Audio Element -->
-    <audio id="weddingAudio" loop autoplay>
-        <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_c8b9d3b1e7.mp3?filename=shehnai-classical-indian-wedding-10982.mp3" type="audio/mpeg">
-    </audio>
-
-    <!-- Music Control Float -->
-    <div class="audio-control" onclick="toggleAudio()">
-        <i class="fas fa-music" id="audioIcon"></i>
-        <span style="font-size: 0.85rem; font-weight: 600; color: var(--maroon-accent);" id="audioText">Music Playing</span>
+    <!-- Audio Player Toggle -->
+    <div class="fixed top-5 right-5 z-40">
+        <button id="audioToggleBtn" onclick="toggleAudio()" class="bg-white/95 backdrop-blur-md border-2 border-gold-500 text-gold-700 p-3 rounded-full shadow-lg hover:bg-gold-500 hover:text-white transition-all flex items-center justify-center w-12 h-12">
+            <i id="audioIcon" class="fas fa-music text-lg"></i>
+        </button>
     </div>
 
-    <!-- Hero / Cover Section -->
-    <section class="hero">
-        <div class="mandala-bg"></div>
-        <div class="auspicious-symbol">卐</div>
-        <div class="blessing-header">|| Shree Ganeshay Namah ||</div>
+    <!-- Main Content Container -->
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
         
-        <h1 class="couple-names">Rajan &amp; Shailja</h1>
+        <!-- Header Banner & Spiritual Header -->
+        <header class="text-center mb-14">
+            <!-- Divine Invocation -->
+            <div class="flex justify-center items-center gap-2 sm:gap-4 text-gold-600 mb-4 text-xs sm:text-sm font-semibold tracking-widest uppercase">
+                <span>❀</span>
+                <span>|| ૐ શ્રી ગણેશાય નમઃ ||</span>
+                <span>❀</span>
+            </div>
 
-        <div class="family-line">
-            Son of <strong>Ritaben &amp; Kaushikkumar Patel</strong><br>
-            &amp;<br>
-            Daughter of <strong>Anjuben &amp; Late Kirtikumar Gandhi</strong>
-        </div>
+            <!-- Kalash / Swastik Motif -->
+            <div class="flex justify-center mb-4">
+                <svg class="w-16 h-16 text-gold-500" viewBox="0 0 100 100" fill="currentColor">
+                    <path d="M50 10 C45 20, 35 25, 30 35 C40 35, 45 30, 50 20 C55 30, 60 35, 70 35 C65 25, 55 20, 50 10 Z" fill="#F48220"/>
+                    <circle cx="50" cy="22" r="4" fill="#D4AF37"/>
+                    <path d="M30 40 C30 35, 70 35, 70 40 L65 52 C65 52, 35 52, 35 52 Z" fill="#D4AF37"/>
+                    <path d="M32 52 C25 60, 25 78, 35 88 C45 95, 55 95, 65 88 C75 78, 75 60, 68 52 Z" fill="#B58E26"/>
+                    <path d="M46 65 H54 M50 61 V69 M54 65 V69 M46 65 V61 M50 61 H54 M50 69 H46" stroke="#FFFDF9" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M25 42 C15 35, 20 20, 32 36 Z" fill="#00875A"/>
+                    <path d="M75 42 C85 35, 80 20, 68 36 Z" fill="#00875A"/>
+                </svg>
+            </div>
 
-        <div class="poetic-intro">
-            "Two hearts woven with grace and divine blessings,<br>
-            embarks on a sacred lifelong journey of togetherness.<br>
-            We warmly invite you to celebrate this auspicious wedding union."
-        </div>
+            <p class="font-cormorant text-xl sm:text-2xl italic text-gray-700 max-w-2xl mx-auto leading-relaxed">
+                Together Forever Begins Here<br>
+                Celebrate with us the auspicious wedding of
+            </p>
+
+            <!-- SINGLE-LINE COUPLE NAMES -->
+            <div class="my-6 overflow-x-auto py-2">
+                <h1 class="font-cinzel font-bold text-gray-900 couple-names-single-line tracking-tight px-2">
+                    <span class="gold-gradient-text">Rajan</span>
+                    <span class="text-marigold font-cursive text-4xl sm:text-6xl md:text-7xl mx-2">&</span>
+                    <span class="gold-gradient-text">Shailja</span>
+                </h1>
+                <div class="h-0.5 w-48 bg-gradient-to-r from-transparent via-gold-500 to-transparent mx-auto mt-3"></div>
+            </div>
+
+            <!-- Parents & Lineage Information -->
+            <div class="max-w-xl mx-auto font-cormorant text-gray-700 text-lg sm:text-xl space-y-1 my-4">
+                <p><span class="font-semibold text-gray-800">S/o</span> Ritaben & Kaushikkumar Patel</p>
+                <p><span class="font-semibold text-gray-800">D/o</span> Anjuben & Late Kirtikumar Gandhi</p>
+            </div>
+
+            <!-- Poetic Invocation Verse -->
+            <div class="max-w-3xl mx-auto bg-white/80 backdrop-blur-sm p-6 sm:p-8 rounded-3xl border border-gold-300/70 shadow-sm mt-6">
+                <p class="font-cormorant text-xl sm:text-2xl text-gray-800 italic leading-relaxed">
+                    "Join us as we mark the start of a beautiful journey,<br>
+                    surrounded by family, friends, and sacred blessings."
+                </p>
+                <div class="text-gold-600 text-xs tracking-widest uppercase font-semibold mt-4">
+                    || ૐ શ્રી લક્ષ્મી-નારાયણાભ્યામ નમઃ ||
+                </div>
+            </div>
+        </header>
 
         <!-- Countdown Timer -->
-        <div class="timer-container">
-            <div class="timer-box">
-                <div class="timer-num" id="days">00</div>
-                <div class="timer-label">Days</div>
-            </div>
-            <div class="timer-box">
-                <div class="timer-num" id="hours">00</div>
-                <div class="timer-label">Hours</div>
-            </div>
-            <div class="timer-box">
-                <div class="timer-num" id="minutes">00</div>
-                <div class="timer-label">Mins</div>
-            </div>
-            <div class="timer-box">
-                <div class="timer-num" id="seconds">00</div>
-                <div class="timer-label">Secs</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Wedding Functions Section -->
-    <section>
-        <div class="section-title">
-            <h2>Auspicious Ceremonies</h2>
-            <p>Celebrations of Love & Tradition</p>
-        </div>
-
-        <div class="events-container">
-
-            <!-- 1. Mehndi -->
-            <div class="event-card card-mehndi">
-                <div>
-                    <div class="event-header">
-                        <div class="event-icon"><i class="fas fa-hand-holding-heart"></i></div>
-                        <h3 class="event-name">Mehndi Celebration</h3>
-                        <div class="event-subtitle">Henna & Hues</div>
+        <section class="mb-16">
+            <div class="bg-gradient-to-r from-cream-100 via-white to-cream-100 border border-gold-400/50 rounded-3xl p-6 sm:p-8 shadow-md text-center max-w-3xl mx-auto">
+                <h3 class="font-cinzel text-base sm:text-lg text-gold-700 font-bold mb-4 tracking-widest uppercase">
+                    <i class="far fa-hourglass mr-2"></i> Countdown To The Sacred Union
+                </h3>
+                <div id="countdown" class="grid grid-cols-4 gap-2 sm:gap-6 max-w-md mx-auto">
+                    <div class="bg-white p-3 rounded-2xl border border-gold-300 shadow-sm">
+                        <span id="days" class="font-cinzel text-2xl sm:text-4xl font-bold text-gray-800 block">00</span>
+                        <span class="text-[10px] sm:text-xs uppercase text-gray-500 font-medium">Days</span>
                     </div>
-                    <div class="event-details">
-                        <div class="detail-row">
-                            <i class="far fa-calendar-alt"></i>
-                            <div><strong>Date:</strong> 26<sup>th</sup> January, 2027</div>
-                        </div>
-                        <div class="detail-row">
-                            <i class="far fa-clock"></i>
-                            <div><strong>Time:</strong> Evening Festive Hours</div>
-                        </div>
-                        <div class="detail-row">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <div><strong>Venue:</strong> Home<br>B/1403, Tremont, Vaishnodevi Circle, Khoraj, Gandhinagar - 382421</div>
-                        </div>
+                    <div class="bg-white p-3 rounded-2xl border border-gold-300 shadow-sm">
+                        <span id="hours" class="font-cinzel text-2xl sm:text-4xl font-bold text-gray-800 block">00</span>
+                        <span class="text-[10px] sm:text-xs uppercase text-gray-500 font-medium">Hours</span>
+                    </div>
+                    <div class="bg-white p-3 rounded-2xl border border-gold-300 shadow-sm">
+                        <span id="minutes" class="font-cinzel text-2xl sm:text-4xl font-bold text-gray-800 block">00</span>
+                        <span class="text-[10px] sm:text-xs uppercase text-gray-500 font-medium">Mins</span>
+                    </div>
+                    <div class="bg-white p-3 rounded-2xl border border-gold-300 shadow-sm">
+                        <span id="seconds" class="font-cinzel text-2xl sm:text-4xl font-bold text-gray-800 block">00</span>
+                        <span class="text-[10px] sm:text-xs uppercase text-gray-500 font-medium">Secs</span>
                     </div>
                 </div>
-                <div class="poetic-venue-box">
-                    <div class="poetic-quote">"This code holds directions, but your presence holds our joy."</div>
-                    <div class="qr-wrapper">
-                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://maps.app.goo.gl/Y4d9hKzBo5yxnAKM7" alt="Home Venue Map QR">
+                <p class="text-xs text-gray-500 mt-4 italic font-cormorant text-base">Celebration Window: January 26<sup>th</sup> – 30<sup>th</sup>, 2027</p>
+            </div>
+        </section>
+
+        <!-- Ceremonies & Functions -->
+        <section class="mb-16">
+            <div class="text-center mb-12">
+                <h2 class="font-cinzel text-3xl sm:text-4xl font-bold text-gray-900 mb-2">Sacred Ceremonies</h2>
+                <p class="font-cormorant text-xl text-gold-700 italic">Moments of Joy, Rituals, & Togetherness</p>
+                <div class="w-20 h-0.5 bg-gold-500 mx-auto mt-3 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+                
+                <!-- 1. Mehndi -->
+                <div class="royal-card rounded-2xl p-6 sm:p-8 border-l-4 border-l-emeraldCustom relative">
+                    <div class="flex items-start justify-between">
+                        <div>
+                            <span class="inline-block px-3 py-1 bg-emerald-100 text-emeraldCustom text-xs font-bold uppercase rounded-full tracking-wider mb-2">
+                                Pre-Wedding Celebrations
+                            </span>
+                            <h3 class="font-cinzel text-2xl font-bold text-gray-800">Mehndi Ceremony</h3>
+                            <p class="font-cormorant italic text-gray-600 text-lg">"Intricate henna, songs of love, and hands adorned in vibrant shades of grace."</p>
+                        </div>
+                        <div class="w-10 h-10 bg-emerald-50 rounded-full flex items-center justify-center text-emeraldCustom text-lg">
+                            <i class="fas fa-hand-sparkles"></i>
+                        </div>
                     </div>
-                    <div>
-                        <a href="https://maps.app.goo.gl/Y4d9hKzBo5yxnAKM7" target="_blank" class="map-btn">
-                            <i class="fas fa-location-arrow"></i> Guidance to Our Home
+                    <div class="mt-6 space-y-2 text-sm sm:text-base text-gray-700">
+                        <div class="flex items-center gap-3">
+                            <i class="far fa-calendar-alt text-emeraldCustom w-5"></i>
+                            <span class="font-semibold">Tuesday, 26<sup>th</sup> January 2027</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fas fa-home text-emeraldCustom w-5 mt-1"></i>
+                            <span class="text-gray-600">Home — B/1403, Tremont, Vaishnodevi Circle, Khoraj, Gandhinagar - 382421</span>
+                        </div>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between">
+                        <a href="https://maps.app.goo.gl/Y4d9hKzBo5yxnAKM7" target="_blank" class="text-xs font-bold text-emeraldCustom hover:underline italic">
+                            "Let path and place guide your way; your presence lights our day."
+                        </a>
+                        <button onclick="openVenueModal('home')" class="text-xs font-semibold bg-emerald-50 text-emeraldCustom px-3 py-1.5 rounded-lg hover:bg-emerald-100 transition-colors">
+                            View Venue
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 2. Ganesh Sthapana -->
+                <div class="royal-card rounded-2xl p-6 sm:p-8 border-l-4 border-l-kumkum relative">
+                    <div class="flex items-start justify-between">
+                        <div>
+                            <span class="inline-block px-3 py-1 bg-orange-100 text-marigold text-xs font-bold uppercase rounded-full tracking-wider mb-2">
+                                Divine Invocation
+                            </span>
+                            <h3 class="font-cinzel text-2xl font-bold text-gray-800">Ganesh Sthapana</h3>
+                            <p class="font-cormorant italic text-gray-600 text-lg">"Invoking Lord Ganesha for peace, wisdom, and auspicious beginnings."</p>
+                        </div>
+                        <div class="w-10 h-10 bg-orange-50 rounded-full flex items-center justify-center text-marigold text-lg">
+                            <i class="fas fa-om"></i>
+                        </div>
+                    </div>
+                    <div class="mt-6 space-y-2 text-sm sm:text-base text-gray-700">
+                        <div class="flex items-center gap-3">
+                            <i class="far fa-calendar-alt text-marigold w-5"></i>
+                            <span class="font-semibold">Thursday, 28<sup>th</sup> January 2027</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="far fa-clock text-marigold w-5"></i>
+                            <span class="font-semibold">8:00 AM onwards</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fas fa-home text-marigold w-5 mt-1"></i>
+                            <span class="text-gray-600">Home — B/1403, Tremont, Vaishnodevi Circle, Khoraj, Gandhinagar - 382421</span>
+                        </div>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between">
+                        <a href="https://maps.app.goo.gl/Y4d9hKzBo5yxnAKM7" target="_blank" class="text-xs font-bold text-marigold hover:underline italic">
+                            "This path leads home, where blessings flow."
+                        </a>
+                        <button onclick="openVenueModal('home')" class="text-xs font-semibold bg-orange-50 text-marigold px-3 py-1.5 rounded-lg hover:bg-orange-100 transition-colors">
+                            View Venue
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 3. Mandap Muhurat -->
+                <div class="royal-card rounded-2xl p-6 sm:p-8 border-l-4 border-l-gold-500 relative">
+                    <div class="flex items-start justify-between">
+                        <div>
+                            <span class="inline-block px-3 py-1 bg-yellow-100 text-gold-700 text-xs font-bold uppercase rounded-full tracking-wider mb-2">
+                                Sacred Altar
+                            </span>
+                            <h3 class="font-cinzel text-2xl font-bold text-gray-800">Mandap Muhurat</h3>
+                            <p class="font-cormorant italic text-gray-600 text-lg">"Sanctifying the holy pillar under which life promises will be pledged."</p>
+                        </div>
+                        <div class="w-10 h-10 bg-yellow-50 rounded-full flex items-center justify-center text-gold-600 text-lg">
+                            <i class="fas fa-gopuram"></i>
+                        </div>
+                    </div>
+                    <div class="mt-6 space-y-2 text-sm sm:text-base text-gray-700">
+                        <div class="flex items-center gap-3">
+                            <i class="far fa-calendar-alt text-gold-600 w-5"></i>
+                            <span class="font-semibold">Thursday, 28<sup>th</sup> January 2027</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="far fa-clock text-gold-600 w-5"></i>
+                            <span class="font-semibold">8:30 AM onwards</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fas fa-home text-gold-600 w-5 mt-1"></i>
+                            <span class="text-gray-600">Home — B/1403, Tremont, Vaishnodevi Circle, Khoraj, Gandhinagar - 382421</span>
+                        </div>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between">
+                        <a href="https://maps.app.goo.gl/Y4d9hKzBo5yxnAKM7" target="_blank" class="text-xs font-bold text-gold-700 hover:underline italic">
+                            "Where rituals begin and joy resides."
+                        </a>
+                        <button onclick="openVenueModal('home')" class="text-xs font-semibold bg-yellow-50 text-gold-700 px-3 py-1.5 rounded-lg hover:bg-yellow-100 transition-colors">
+                            View Venue
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 4. Pithi (Haldi) -->
+                <div class="royal-card rounded-2xl p-6 sm:p-8 border-l-4 border-l-marigold relative">
+                    <div class="flex items-start justify-between">
+                        <div>
+                            <span class="inline-block px-3 py-1 bg-amber-100 text-amber-800 text-xs font-bold uppercase rounded-full tracking-wider mb-2">
+                                Golden Radiance
+                            </span>
+                            <h3 class="font-cinzel text-2xl font-bold text-gray-800">Pithi (Haldi)</h3>
+                            <p class="font-cormorant italic text-gray-600 text-lg">"Golden turmeric, bright smiles, and festive warmth to bless the groom."</p>
+                        </div>
+                        <div class="w-10 h-10 bg-amber-50 rounded-full flex items-center justify-center text-marigold text-lg">
+                            <i class="fas fa-spa"></i>
+                        </div>
+                    </div>
+                    <div class="mt-6 space-y-2 text-sm sm:text-base text-gray-700">
+                        <div class="flex items-center gap-3">
+                            <i class="far fa-calendar-alt text-marigold w-5"></i>
+                            <span class="font-semibold">Thursday, 28<sup>th</sup> January 2027</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="far fa-clock text-marigold w-5"></i>
+                            <span class="font-semibold">9:40 AM onwards</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fas fa-home text-marigold w-5 mt-1"></i>
+                            <span class="text-gray-600">Home — B/1403, Tremont, Vaishnodevi Circle, Khoraj, Gandhinagar - 382421</span>
+                        </div>
+                        <div class="mt-3 p-2.5 bg-orange-50 rounded-xl border border-orange-200 text-xs text-orange-900 font-semibold flex items-center gap-2">
+                            <i class="fas fa-tshirt text-marigold"></i>
+                            <span>Dress Code: Orange Ethnic Cloths</span>
+                        </div>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between">
+                        <a href="https://maps.app.goo.gl/Y4d9hKzBo5yxnAKM7" target="_blank" class="text-xs font-bold text-marigold hover:underline italic">
+                            "Golden moments await your presence."
+                        </a>
+                        <button onclick="openVenueModal('home')" class="text-xs font-semibold bg-orange-50 text-marigold px-3 py-1.5 rounded-lg hover:bg-orange-100 transition-colors">
+                            View Venue
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 5. Jaan Prasthan -->
+                <div class="royal-card rounded-2xl p-6 sm:p-8 border-l-4 border-l-indigoCustom relative">
+                    <div class="flex items-start justify-between">
+                        <div>
+                            <span class="inline-block px-3 py-1 bg-indigo-100 text-indigoCustom text-xs font-bold uppercase rounded-full tracking-wider mb-2">
+                                Festive Procession
+                            </span>
+                            <h3 class="font-cinzel text-2xl font-bold text-gray-800">Jaan Prasthan</h3>
+                            <p class="font-cormorant italic text-gray-600 text-lg">"With dhol beats and joyful feet, the procession sets forth."</p>
+                        </div>
+                        <div class="w-10 h-10 bg-indigo-50 rounded-full flex items-center justify-center text-indigoCustom text-lg">
+                            <i class="fas fa-drum"></i>
+                        </div>
+                    </div>
+                    <div class="mt-6 space-y-2 text-sm sm:text-base text-gray-700">
+                        <div class="flex items-center gap-3">
+                            <i class="far fa-calendar-alt text-indigoCustom w-5"></i>
+                            <span class="font-semibold">Thursday, 28<sup>th</sup> January 2027</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="far fa-clock text-indigoCustom w-5"></i>
+                            <span class="font-semibold">02:15 PM</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fas fa-home text-indigoCustom w-5 mt-1"></i>
+                            <span class="text-gray-600">Home — B/1403, Tremont, Vaishnodevi Circle, Khoraj, Gandhinagar - 382421</span>
+                        </div>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between">
+                        <a href="https://maps.app.goo.gl/Y4d9hKzBo5yxnAKM7" target="_blank" class="text-xs font-bold text-indigoCustom hover:underline italic">
+                            "Departing with happiness and warmth."
+                        </a>
+                        <button onclick="openVenueModal('home')" class="text-xs font-semibold bg-indigo-50 text-indigoCustom px-3 py-1.5 rounded-lg hover:bg-indigo-100 transition-colors">
+                            View Venue
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 6. Grah Shanti -->
+                <div class="royal-card rounded-2xl p-6 sm:p-8 border-l-4 border-l-magentaCustom relative">
+                    <div class="flex items-start justify-between">
+                        <div>
+                            <span class="inline-block px-3 py-1 bg-pink-100 text-magentaCustom text-xs font-bold uppercase rounded-full tracking-wider mb-2">
+                                Celestial Harmony
+                            </span>
+                            <h3 class="font-cinzel text-2xl font-bold text-gray-800">Grah Shanti</h3>
+                            <p class="font-cormorant italic text-gray-600 text-lg">"Prayers for planetary peace, prosperity, and eternal harmony."</p>
+                        </div>
+                        <div class="w-10 h-10 bg-pink-50 rounded-full flex items-center justify-center text-magentaCustom text-lg">
+                            <i class="fas fa-sun"></i>
+                        </div>
+                    </div>
+                    <div class="mt-6 space-y-2 text-sm sm:text-base text-gray-700">
+                        <div class="flex items-center gap-3">
+                            <i class="far fa-calendar-alt text-magentaCustom w-5"></i>
+                            <span class="font-semibold">Saturday, 30<sup>th</sup> January 2027</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="far fa-clock text-magentaCustom w-5"></i>
+                            <span class="font-semibold">10:00 AM onwards</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fas fa-map-marker-alt text-magentaCustom w-5 mt-1"></i>
+                            <span class="text-gray-600">Nilkanth Party Plot, Opp. Shriji Party Plot, Gota, Ahmedabad</span>
+                        </div>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between">
+                        <a href="https://maps.app.goo.gl/NMvg6N8bMcXtxHXb7?g_st=aw" target="_blank" class="text-xs font-bold text-magentaCustom hover:underline italic">
+                            "A sacred space for sacred prayers."
+                        </a>
+                        <button onclick="openVenueModal('nilkanth')" class="text-xs font-semibold bg-pink-50 text-magentaCustom px-3 py-1.5 rounded-lg hover:bg-pink-100 transition-colors">
+                            View Venue
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 7. Wedding Reception -->
+                <div class="royal-card rounded-2xl p-6 sm:p-8 border-l-4 border-l-gold-500 md:col-span-2 relative bg-gradient-to-r from-white via-cream-50 to-white">
+                    <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-4">
+                        <div>
+                            <span class="inline-block px-3 py-1 bg-yellow-100 text-gold-700 text-xs font-bold uppercase rounded-full tracking-wider mb-2">
+                                Grand Reception
+                            </span>
+                            <h3 class="font-cinzel text-3xl font-bold text-gray-900">Wedding Reception</h3>
+                            <p class="font-cormorant italic text-gold-700 text-xl">"Under twinkling lights and starry skies, celebrate with us as joy multiplies."</p>
+                        </div>
+                        <div class="w-14 h-14 bg-gradient-to-br from-gold-400 to-gold-600 rounded-2xl flex items-center justify-center text-white text-2xl shadow-md self-start">
+                            <i class="fas fa-glass-cheers"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4 text-sm sm:text-base text-gray-700 bg-white/90 p-4 rounded-xl border border-gold-200">
+                        <div class="flex items-center gap-3">
+                            <i class="far fa-calendar-alt text-gold-600 text-lg"></i>
+                            <div>
+                                <span class="text-xs text-gray-500 block">Date</span>
+                                <span class="font-semibold">Saturday, 30<sup>th</sup> January 2027</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="far fa-clock text-gold-600 text-lg"></i>
+                            <div>
+                                <span class="text-xs text-gray-500 block">Time</span>
+                                <span class="font-semibold">07:00 PM onwards</span>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fas fa-map-marker-alt text-gold-600 text-lg mt-1"></i>
+                            <div>
+                                <span class="text-xs text-gray-500 block">Venue</span>
+                                <span class="font-semibold block">Nilkanth Party Plot</span>
+                                <span class="text-xs text-gray-600">Opp. Shriji Party Plot, Gota, Ahmedabad</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 pt-4 border-t border-gray-100 flex flex-wrap items-center justify-between gap-3">
+                        <span class="text-xs sm:text-sm font-bold text-gold-700 italic">
+                            "This code holds directions, but your presence holds our joy."
+                        </span>
+                        <a href="https://maps.app.goo.gl/NMvg6N8bMcXtxHXb7?g_st=aw" target="_blank" class="text-xs sm:text-sm font-bold bg-gold-500 hover:bg-gold-600 text-white px-5 py-2.5 rounded-xl shadow-md transition-all flex items-center gap-2">
+                            <i class="fas fa-compass"></i> Follow The Path
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Poetic Venue Navigation Cards Section -->
+        <section class="mb-16">
+            <div class="bg-white/90 backdrop-blur-md border border-gold-300 rounded-3xl p-6 sm:p-10 shadow-lg text-center">
+                <h3 class="font-cinzel text-2xl sm:text-3xl font-bold text-gray-800 mb-2">Guiding Your Way To Us</h3>
+                <p class="font-cormorant italic text-gold-700 text-xl max-w-xl mx-auto mb-8">
+                    "This code holds directions, but your presence holds our joy."
+                </p>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                    <!-- Home Location Card -->
+                    <div class="bg-cream-50 p-6 rounded-2xl border border-gold-200 flex flex-col justify-between items-center text-center">
+                        <div>
+                            <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-gold-600 text-xl mx-auto shadow-sm mb-3">
+                                <i class="fas fa-home"></i>
+                            </div>
+                            <div class="font-cinzel font-bold text-gray-800 text-lg mb-1">Residence</div>
+                            <p class="text-xs text-gray-600 mb-4 leading-relaxed">
+                                B/1403, Tremont, Vaishnodevi Circle, Khoraj, Gandhinagar - 382421
+                            </p>
+                        </div>
+
+                        <div class="bg-white p-3 rounded-xl border border-gray-200 shadow-sm mb-4">
+                            <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://maps.app.goo.gl/Y4d9hKzBo5yxnAKM7" alt="Home Venue Path" class="w-36 h-36 object-contain" onerror="this.src='https://placehold.co/150x150/FFFDF9/D4AF37?text=Scan+Path'">
+                        </div>
+
+                        <a href="https://maps.app.goo.gl/Y4d9hKzBo5yxnAKM7" target="_blank" class="w-full py-2.5 bg-white border border-gold-400 text-gold-700 hover:bg-gold-500 hover:text-white font-bold rounded-xl transition-all shadow-sm text-xs flex items-center justify-center gap-2 italic">
+                            <i class="fas fa-map-pin"></i> Open Path to Residence
+                        </a>
+                    </div>
+
+                    <!-- Nilkanth Party Plot Card -->
+                    <div class="bg-cream-50 p-6 rounded-2xl border border-gold-200 flex flex-col justify-between items-center text-center">
+                        <div>
+                            <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-gold-600 text-xl mx-auto shadow-sm mb-3">
+                                <i class="fas fa-map-marked-alt"></i>
+                            </div>
+                            <div class="font-cinzel font-bold text-gray-800 text-lg mb-1">Nilkanth Party Plot</div>
+                            <p class="text-xs text-gray-600 mb-4 leading-relaxed">
+                                Opp. Shriji Party Plot, Gota, Ahmedabad, Gujarat 380060
+                            </p>
+                        </div>
+
+                        <div class="bg-white p-3 rounded-xl border border-gray-200 shadow-sm mb-4">
+                            <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://maps.app.goo.gl/NMvg6N8bMcXtxHXb7?g_st=aw" alt="Nilkanth Venue Path" class="w-36 h-36 object-contain" onerror="this.src='https://placehold.co/150x150/FFFDF9/D4AF37?text=Scan+Path'">
+                        </div>
+
+                        <a href="https://maps.app.goo.gl/NMvg6N8bMcXtxHXb7?g_st=aw" target="_blank" class="w-full py-2.5 bg-white border border-gold-400 text-gold-700 hover:bg-gold-500 hover:text-white font-bold rounded-xl transition-all shadow-sm text-xs flex items-center justify-center gap-2 italic">
+                            <i class="fas fa-map-pin"></i> Open Path to Celebration Ground
                         </a>
                     </div>
                 </div>
             </div>
+        </section>
 
-            <!-- 2. Ganesh Sthapana -->
-            <div class="event-card card-ganesh">
-                <div>
-                    <div class="event-header">
-                        <div class="event-icon"><i class="fas fa-om"></i></div>
-                        <h3 class="event-name">Ganesh Sthapana</h3>
-                        <div class="event-subtitle">Invoking Divine Blessings</div>
-                    </div>
-                    <div class="event-details">
-                        <div class="detail-row">
-                            <i class="far fa-calendar-alt"></i>
-                            <div><strong>Date:</strong> 28<sup>th</sup> January, 2027</div>
-                        </div>
-                        <div class="detail-row">
-                            <i class="far fa-clock"></i>
-                            <div><strong>Time:</strong> 08:00 AM</div>
-                        </div>
-                        <div class="detail-row">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <div><strong>Venue:</strong> Home<br>B/1403, Tremont, Vaishnodevi Circle, Khoraj, Gandhinagar - 382421</div>
-                        </div>
-                        <div style="text-align: center;">
-                            <span class="theme-badge"><i class="fas fa-tshirt"></i> Dress Code: Orange Ethnic Clothes</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="poetic-venue-box">
-                    <div class="poetic-quote">"This code holds directions, but your presence holds our joy."</div>
-                    <div class="qr-wrapper">
-                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://maps.app.goo.gl/Y4d9hKzBo5yxnAKM7" alt="Home Venue Map QR">
-                    </div>
-                    <div>
-                        <a href="https://maps.app.goo.gl/Y4d9hKzBo5yxnAKM7" target="_blank" class="map-btn">
-                            <i class="fas fa-location-arrow"></i> Guidance to Our Home
-                        </a>
-                    </div>
-                </div>
+        <!-- Footer -->
+        <footer class="text-center pt-8 border-t border-gold-300/60">
+            <div class="font-cormorant italic text-xl sm:text-2xl text-gray-800 max-w-xl mx-auto leading-relaxed mb-4">
+                "Your presence will be our greatest gift.<br>
+                We look forward to celebrating with you."
+            </div>
+            
+            <div class="font-cinzel text-lg font-bold text-gold-700 tracking-wider mb-2">
+                With Warm Regards & Love,<br>
+                <span class="text-gray-900 text-base font-normal">Patel & Gandhi Families</span>
             </div>
 
-            <!-- 3. Mandap Muhurat -->
-            <div class="event-card card-mandap">
-                <div>
-                    <div class="event-header">
-                        <div class="event-icon"><i class="fas fa-dharmachakra"></i></div>
-                        <h3 class="event-name">Mandap Muhurat</h3>
-                        <div class="event-subtitle">Sanctifying the Sacred Space</div>
-                    </div>
-                    <div class="event-details">
-                        <div class="detail-row">
-                            <i class="far fa-calendar-alt"></i>
-                            <div><strong>Date:</strong> 28<sup>th</sup> January, 2027</div>
-                        </div>
-                        <div class="detail-row">
-                            <i class="far fa-clock"></i>
-                            <div><strong>Time:</strong> 08:30 AM</div>
-                        </div>
-                        <div class="detail-row">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <div><strong>Venue:</strong> Home<br>B/1403, Tremont, Vaishnodevi Circle, Khoraj, Gandhinagar - 382421</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="poetic-venue-box">
-                    <div class="poetic-quote">"This code holds directions, but your presence holds our joy."</div>
-                    <div class="qr-wrapper">
-                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://maps.app.goo.gl/Y4d9hKzBo5yxnAKM7" alt="Home Venue Map QR">
-                    </div>
-                    <div>
-                        <a href="https://maps.app.goo.gl/Y4d9hKzBo5yxnAKM7" target="_blank" class="map-btn">
-                            <i class="fas fa-location-arrow"></i> Guidance to Our Home
-                        </a>
-                    </div>
-                </div>
+            <div class="mt-6 text-gold-600 font-bold text-lg tracking-widest uppercase">
+                ||  શુભ વિવાહ  ||
             </div>
+        </footer>
 
-            <!-- 4. Pithi (Haldi) -->
-            <div class="event-card card-pithi">
-                <div>
-                    <div class="event-header">
-                        <div class="event-icon"><i class="fas fa-sun"></i></div>
-                        <h3 class="event-name">Pithi (Haldi)</h3>
-                        <div class="event-subtitle">Golden Glow & Festivities</div>
-                    </div>
-                    <div class="event-details">
-                        <div class="detail-row">
-                            <i class="far fa-calendar-alt"></i>
-                            <div><strong>Date:</strong> 28<sup>th</sup> January, 2027</div>
-                        </div>
-                        <div class="detail-row">
-                            <i class="far fa-clock"></i>
-                            <div><strong>Time:</strong> 09:40 AM</div>
-                        </div>
-                        <div class="detail-row">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <div><strong>Venue:</strong> Home<br>B/1403, Tremont, Vaishnodevi Circle, Khoraj, Gandhinagar - 382421</div>
-                        </div>
-                        <div style="text-align: center;">
-                            <span class="theme-badge"><i class="fas fa-tshirt"></i> Dress Code: Orange Ethnic Clothes</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="poetic-venue-box">
-                    <div class="poetic-quote">"This code holds directions, but your presence holds our joy."</div>
-                    <div class="qr-wrapper">
-                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://maps.app.goo.gl/Y4d9hKzBo5yxnAKM7" alt="Home Venue Map QR">
-                    </div>
-                    <div>
-                        <a href="https://maps.app.goo.gl/Y4d9hKzBo5yxnAKM7" target="_blank" class="map-btn">
-                            <i class="fas fa-location-arrow"></i> Guidance to Our Home
-                        </a>
-                    </div>
-                </div>
-            </div>
+    </div>
 
-            <!-- 5. Jaan Prasthan -->
-            <div class="event-card card-jaan">
-                <div>
-                    <div class="event-header">
-                        <div class="event-icon"><i class="fas fa-horse-head"></i></div>
-                        <h3 class="event-name">Jaan Prasthan</h3>
-                        <div class="event-subtitle">The Groom's Royal Procession</div>
-                    </div>
-                    <div class="event-details">
-                        <div class="detail-row">
-                            <i class="far fa-calendar-alt"></i>
-                            <div><strong>Date:</strong> 28<sup>th</sup> January, 2027</div>
-                        </div>
-                        <div class="detail-row">
-                            <i class="far fa-clock"></i>
-                            <div><strong>Time:</strong> 02:15 PM</div>
-                        </div>
-                        <div class="detail-row">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <div><strong>Departure:</strong> Home<br>B/1403, Tremont, Vaishnodevi Circle, Khoraj, Gandhinagar - 382421</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="poetic-venue-box">
-                    <div class="poetic-quote">"This code holds directions, but your presence holds our joy."</div>
-                    <div class="qr-wrapper">
-                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://maps.app.goo.gl/Y4d9hKzBo5yxnAKM7" alt="Home Venue Map QR">
-                    </div>
-                    <div>
-                        <a href="https://maps.app.goo.gl/Y4d9hKzBo5yxnAKM7" target="_blank" class="map-btn">
-                            <i class="fas fa-location-arrow"></i> Guidance to Our Departure
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 6. Grah Shanti -->
-            <div class="event-card card-grah">
-                <div>
-                    <div class="event-header">
-                        <div class="event-icon"><i class="fas fa-pray"></i></div>
-                        <h3 class="event-name">Grah Shanti</h3>
-                        <div class="event-subtitle">Prayers for Harmony & Prosperity</div>
-                    </div>
-                    <div class="event-details">
-                        <div class="detail-row">
-                            <i class="far fa-calendar-alt"></i>
-                            <div><strong>Date:</strong> 30<sup>th</sup> January, 2027</div>
-                        </div>
-                        <div class="detail-row">
-                            <i class="far fa-clock"></i>
-                            <div><strong>Time:</strong> 10:00 AM</div>
-                        </div>
-                        <div class="detail-row">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <div><strong>Venue:</strong> Nilkanth Party Plot<br>Opp. Shriji Party Plot, Gota, Ahmedabad - 380060</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="poetic-venue-box">
-                    <div class="poetic-quote">"Let path and place guide your way; your presence lights our special day."</div>
-                    <div class="qr-wrapper">
-                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://maps.app.goo.gl/NMvg6N8bMcXtxHXb7?g_st=aw" alt="Nilkanth Party Plot QR">
-                    </div>
-                    <div>
-                        <a href="https://maps.app.goo.gl/NMvg6N8bMcXtxHXb7?g_st=aw" target="_blank" class="map-btn">
-                            <i class="fas fa-location-arrow"></i> Guidance to Nilkanth Plot
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 7. Grand Reception -->
-            <div class="event-card card-reception">
-                <div>
-                    <div class="event-header">
-                        <div class="event-icon"><i class="fas fa-glass-cheers"></i></div>
-                        <h3 class="event-name">Wedding Reception</h3>
-                        <div class="event-subtitle">An Evening of Feast & Joy</div>
-                    </div>
-                    <div class="event-details">
-                        <div class="detail-row">
-                            <i class="far fa-calendar-alt"></i>
-                            <div><strong>Date:</strong> 30<sup>th</sup> January, 2027</div>
-                        </div>
-                        <div class="detail-row">
-                            <i class="far fa-clock"></i>
-                            <div><strong>Time:</strong> 07:00 PM Onwards</div>
-                        </div>
-                        <div class="detail-row">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <div><strong>Venue:</strong> Nilkanth Party Plot<br>Opp. Shriji Party Plot, Gota, Ahmedabad - 380060</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="poetic-venue-box">
-                    <div class="poetic-quote">"Let path and place guide your way; your presence lights our special day."</div>
-                    <div class="qr-wrapper">
-                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://maps.app.goo.gl/NMvg6N8bMcXtxHXb7?g_st=aw" alt="Nilkanth Party Plot QR">
-                    </div>
-                    <div>
-                        <a href="https://maps.app.goo.gl/NMvg6N8bMcXtxHXb7?g_st=aw" target="_blank" class="map-btn">
-                            <i class="fas fa-location-arrow"></i> Guidance to Nilkanth Plot
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- Family Blessings Section -->
-    <div class="family-blessings">
-        <h3 class="blessing-title">Divine & Elders' Blessings</h3>
-        <p style="font-family: 'Playfair Display', serif; font-style: italic; color: var(--royal-purple);">
-            "Surrounded by the eternal blessings of our elders and the warm love of our family."
-        </p>
-
-        <div class="family-grid">
-            <div class="family-card">
-                <h4>Divine Blessings</h4>
-                <p>Late Gandalal Keshavlal Patel<br>&amp; Jiviben Gandalal Patel</p>
-            </div>
-            <div class="family-card">
-                <h4>Special Invitee</h4>
-                <p>Mittal Prakashkumar Patel (USA)<br>Prakashkumar Gandalal Patel (USA)</p>
-            </div>
-            <div class="family-card">
-                <h4>With Lots of Love</h4>
-                <p>Sarthak Kaushikkumar Patel<br>Khushi Prakashkumar Patel (USA)</p>
-            </div>
-        </div>
-
-        <div style="margin-top: 40px; font-family: 'Great Vibes', cursive; font-size: 2.2rem; color: var(--maroon-accent);">
-            Your presence will be our greatest gift.
+    <!-- Venue Detail Modal -->
+    <div id="venueModal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-md w-full p-6 sm:p-8 relative shadow-2xl border border-gold-300">
+            <button onclick="closeVenueModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-700 text-xl w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center">
+                &times;
+            </button>
+            <div id="modalContent" class="text-center"></div>
         </div>
     </div>
 
-    <!-- Footer -->
-    <footer>
-        <p>With Warm Regards &amp; Joyful Anticipation,</p>
-        <p style="font-weight: 600; color: var(--maroon-accent);">Patel &amp; Gandhi Families</p>
-        <p style="font-size: 0.85rem; margin-top: 15px; color: var(--gold-dark);">#RajanWedsShailja</p>
-    </footer>
+    <!-- Audio Element -->
+    <audio id="bgAudio" loop preload="none">
+        <source src="https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3?filename=indian-traditional-sitar-112345.mp3" type="audio/mpeg">
+    </audio>
 
-    <!-- Countdown & Music Script -->
     <script>
-        // Countdown Timer Script
-        const weddingDate = new Date("January 30, 2027 10:00:00").getTime();
+        // Real-time Countdown
+        const weddingDate = new Date("January 28, 2027 08:00:00").getTime();
 
         function updateCountdown() {
             const now = new Date().getTime();
@@ -786,60 +576,107 @@
                 const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
                 const seconds = Math.floor((difference % (1000 * 60)) / 1000);
 
-                document.getElementById("days").innerText = days.toString().padStart(2, '0');
-                document.getElementById("hours").innerText = hours.toString().padStart(2, '0');
-                document.getElementById("minutes").innerText = minutes.toString().padStart(2, '0');
-                document.getElementById("seconds").innerText = seconds.toString().padStart(2, '0');
+                document.getElementById("days").innerText = days < 10 ? '0' + days : days;
+                document.getElementById("hours").innerText = hours < 10 ? '0' + hours : hours;
+                document.getElementById("minutes").innerText = minutes < 10 ? '0' + minutes : minutes;
+                document.getElementById("seconds").innerText = seconds < 10 ? '0' + seconds : seconds;
             } else {
-                document.getElementById("days").innerText = "00";
-                document.getElementById("hours").innerText = "00";
-                document.getElementById("minutes").innerText = "00";
-                document.getElementById("seconds").innerText = "00";
+                document.getElementById("countdown").innerHTML = "<div class='col-span-4 text-gold-700 font-cinzel text-xl font-bold py-2'>The Sacred Celebrations Have Begun!</div>";
             }
         }
-
         setInterval(updateCountdown, 1000);
         updateCountdown();
 
-        // Audio Toggle Script & Autoplay Fallback
-        const audio = document.getElementById("weddingAudio");
-        const audioIcon = document.getElementById("audioIcon");
-        const audioText = document.getElementById("audioText");
+        // Audio Player Controls & Autoplay Logic
         let isPlaying = false;
+        const audio = document.getElementById("bgAudio");
+        const audioBtn = document.getElementById("audioToggleBtn");
+        const audioIcon = document.getElementById("audioIcon");
 
         function playAudio() {
             audio.play().then(() => {
                 isPlaying = true;
-                audioIcon.className = "fas fa-music";
-                audioText.innerText = "Music Playing";
-            }).catch(err => {
-                isPlaying = false;
-                audioIcon.className = "fas fa-volume-mute";
-                audioText.innerText = "Tap for Music";
+                audioIcon.className = "fas fa-volume-up text-lg";
+                audioBtn.classList.add("bg-gold-500", "text-white");
+                audioBtn.classList.remove("bg-white/95", "text-gold-700");
+            }).catch(() => {
+                // Handle autoplay block by binding to first click anywhere
+                document.addEventListener('click', function autoPlayOnUserGesture() {
+                    if (!isPlaying) {
+                        audio.play().then(() => {
+                            isPlaying = true;
+                            audioIcon.className = "fas fa-volume-up text-lg";
+                            audioBtn.classList.add("bg-gold-500", "text-white");
+                            audioBtn.classList.remove("bg-white/95", "text-gold-700");
+                        });
+                    }
+                    document.removeEventListener('click', autoPlayOnUserGesture);
+                }, { once: true });
             });
         }
-
-        // Attempt autoplay immediately
-        window.addEventListener('DOMContentLoaded', () => {
-            playAudio();
-            document.body.addEventListener('click', () => {
-                if (!isPlaying) playAudio();
-            }, { once: true });
-        });
 
         function toggleAudio() {
             if (isPlaying) {
                 audio.pause();
+                audioIcon.className = "fas fa-music text-lg";
+                audioBtn.classList.remove("bg-gold-500", "text-white");
+                audioBtn.classList.add("bg-white/95", "text-gold-700");
                 isPlaying = false;
-                audioIcon.className = "fas fa-volume-mute";
-                audioText.innerText = "Music Paused";
             } else {
-                audio.play();
-                isPlaying = true;
-                audioIcon.className = "fas fa-music";
-                audioText.innerText = "Music Playing";
+                playAudio();
             }
         }
+
+        // Attempt instant playback on page ready
+        window.addEventListener('DOMContentLoaded', () => {
+            playAudio();
+        });
+
+        // Modal Logic
+        const venueDetails = {
+            home: {
+                title: "Residence (Home)",
+                address: "B/1403, Tremont, Vaishnodevi Circle, Khoraj, Gandhinagar - 382421",
+                qrUrl: "https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=https://maps.app.goo.gl/Y4d9hKzBo5yxnAKM7",
+                mapUrl: "https://maps.app.goo.gl/Y4d9hKzBo5yxnAKM7",
+                events: "Mehndi, Ganesh Sthapana, Mandap Muhurat, Pithi & Jaan Prasthan"
+            },
+            nilkanth: {
+                title: "Nilkanth Party Plot",
+                address: "Opposite Shriji Party Plot, Gota, Ahmedabad, Gujarat 380060",
+                qrUrl: "https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=https://maps.app.goo.gl/NMvg6N8bMcXtxHXb7?g_st=aw",
+                mapUrl: "https://maps.app.goo.gl/NMvg6N8bMcXtxHXb7?g_st=aw",
+                events: "Grah Shanti & Wedding Reception"
+            }
+        };
+
+        function openVenueModal(type) {
+            const data = venueDetails[type];
+            const content = document.getElementById("modalContent");
+            
+            content.innerHTML = `
+                <div class="font-cinzel text-xl font-bold text-gray-800 mb-1">${data.title}</div>
+                <p class="text-xs text-gold-700 font-semibold uppercase mb-4">${data.events}</p>
+                <div class="bg-cream-50 p-4 rounded-2xl border border-gold-200 inline-block mb-3">
+                    <img src="${data.qrUrl}" alt="Venue QR Code" class="w-44 h-44 object-contain mx-auto" onerror="this.src='https://placehold.co/180x180/FFFDF9/D4AF37?text=Scan+Path'">
+                </div>
+                <p class="font-cormorant italic text-gold-700 text-sm mb-3">"This code holds directions, but your presence holds our joy."</p>
+                <p class="text-xs text-gray-600 mb-6 px-2">${data.address}</p>
+                <a href="${data.mapUrl}" target="_blank" class="block w-full py-3 bg-gold-500 hover:bg-gold-600 text-white font-bold rounded-xl text-sm shadow-md transition-all">
+                    Open Path in Google Maps
+                </a>
+            `;
+            
+            document.getElementById("venueModal").classList.remove("hidden");
+        }
+
+        function closeVenueModal() {
+            document.getElementById("venueModal").classList.add("hidden");
+        }
+
+        document.getElementById("venueModal").addEventListener("click", function(e) {
+            if (e.target === this) closeVenueModal();
+        });
     </script>
 </body>
 </html>
