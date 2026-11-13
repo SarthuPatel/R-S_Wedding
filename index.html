@@ -512,10 +512,10 @@
         </div>
     </div>
 
-    <!-- Traditional Shehnai Audio Element (with fallback) -->
+  <!-- Audio Element: Looks for local 'shehnai.mp3' first, then reliable CDN -->
     <audio id="bgAudio" loop preload="auto">
-        <source src="https://cdn.pixabay.com/audio/2023/02/28/audio_2321e5b271.mp3" type="audio/mpeg">
-        <source src="https://cdn.pixabay.com/audio/2022/10/25/audio_946bc6eb4c.mp3" type="audio/mpeg">
+        <source src="shehnai.mp3" type="audio/mpeg">
+        <source src="https://actions.google.com/sounds/v1/ambiences/indian_flute_and_tanpura.ogg" type="audio/ogg">
     </audio>
 
     <script>
@@ -542,7 +542,7 @@
         setInterval(updateCountdown, 1000);
         updateCountdown();
 
-        // 2. Shehnai Audio Autoplay & Interaction Handler
+        // 2. Reliable Audio Autoplay & Tap-to-Start Handler
         const audio = document.getElementById('bgAudio');
         const audioBtn = document.getElementById('audioToggleBtn');
         const audioIcon = document.getElementById('audioIcon');
@@ -563,40 +563,44 @@
             audioBtn.classList.add("music-pulse");
         }
 
-        function startAudio() {
-            if (!isPlaying) {
-                audio.volume = 0.65;
-                audio.play().then(() => {
+        function unlockAndPlay() {
+            if (isPlaying) return;
+            audio.volume = 0.7;
+            const playPromise = audio.play();
+            if (playPromise !== undefined) {
+                playPromise.then(() => {
                     setPlayingUI();
-                    removeInteractionListeners();
-                }).catch(() => {
-                    // Waiting for first user tap/scroll
+                    cleanupListeners();
+                }).catch((error) => {
+                    console.log("Waiting for valid tap gesture:", error);
                 });
             }
         }
 
-        function removeInteractionListeners() {
-            ['click', 'touchstart', 'scroll', 'keydown'].forEach(evt => {
-                document.removeEventListener(evt, startAudio);
-            });
+        function cleanupListeners() {
+            document.removeEventListener('click', unlockAndPlay);
+            document.removeEventListener('touchend', unlockAndPlay);
         }
 
-        // Try playing immediately on load, and attach first-touch unlock
+        // Browsers require an explicit tap/click (not scroll) to start audio
         window.addEventListener('DOMContentLoaded', () => {
-            startAudio();
-            ['click', 'touchstart', 'scroll', 'keydown'].forEach(evt => {
-                document.addEventListener(evt, startAudio, { passive: true });
-            });
+            unlockAndPlay();
+            document.addEventListener('click', unlockAndPlay);
+            document.addEventListener('touchend', unlockAndPlay);
         });
 
-        function toggleAudio() {
+        function toggleAudio(event) {
+            if (event) event.stopPropagation();
             if (isPlaying) {
                 audio.pause();
                 setPausedUI();
-                removeInteractionListeners();
+                cleanupListeners();
             } else {
                 audio.play().then(() => {
                     setPlayingUI();
+                    cleanupListeners();
+                }).catch(err => {
+                    alert("Please tap the screen once to enable audio.");
                 });
             }
         }
